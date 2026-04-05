@@ -96,7 +96,6 @@ class WorkspacePaths:
 
         input_root = _resolve_input_root(
             course_root=course_root,
-            repo_root=repo_root_path,
             normalized_course=normalized_course,
         )
         output_root = course_root / "output"
@@ -149,25 +148,23 @@ class WorkspacePaths:
 def _resolve_input_root(
     *,
     course_root: Path,
-    repo_root: Path,
     normalized_course: str,
 ) -> Path:
     """Resolve the effective input root for one course workspace.
 
-    Known thesis courses always read raw inputs from `data/inputs/<COURSE>`.
-    Explicit data roots only redirect derived artifacts and test-set files for
-    those courses.
+    Known built-in courses read raw inputs directly from the selected
+    `<data-root>/<COURSE>` workspace.
 
     Unknown ad hoc course workspaces continue to read from `<course>/input`.
     """
     if normalized_course in KNOWN_COURSE_DIR_NAMES:
-        return default_course_roots(repo_root)[normalized_course]
+        return course_root
     return course_root / "input"
 
 
 def default_course_roots(repo_root: Path) -> dict[str, Path]:
     """Return the default course layout for this repository."""
-    shared_data_root = (repo_root / "data" / "inputs").resolve()
+    shared_data_root = (repo_root / "data").resolve()
     return {
         course: _resolve_known_course_root(shared_data_root, course, dir_name)
         for course, dir_name in KNOWN_COURSE_DIR_NAMES.items()

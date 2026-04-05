@@ -7,7 +7,7 @@ It includes:
 - `requirements.txt`
 - `src/` runtime code
 - `.env.example`
-- `data/inputs/IN3240/` synthetic example inputs and test set
+- `data/IN3240/` synthetic example inputs and test set
 
 ## Install
 
@@ -92,7 +92,7 @@ EMBEDDING_MODEL=ibm/slate-30m-english-rtrvr
 By default, the pipeline expects course inputs under:
 
 ```text
-data/inputs/<COURSE>/
+data/<COURSE>/
 ```
 
 Each course folder should contain:
@@ -106,7 +106,7 @@ test_set/
 This project already includes one example course:
 
 ```text
-data/inputs/IN3240/
+data/IN3240/
 ```
 
 The included PDFs and questions are synthetic demo material created for this
@@ -174,7 +174,7 @@ python3 app.py ir-metrics --course demo101 --source slides --k-values 1 3 5 7 10
 ```
 
 Built-in course IDs such as `bi358`, `cos226`, and `in3240` keep using the
-default `data/inputs/<COURSE>/` layout.
+default `data/<COURSE>/` layout.
 
 ## How To Use
 
