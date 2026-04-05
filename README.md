@@ -144,6 +144,38 @@ In practice, the stages depend on data like this:
 For the bundled `IN3240` demo course, both `test_set.json` and
 `test_set_with_labels.json` are already included.
 
+### Add A New Course
+
+For a new custom course ID, create a separate shared data root and pass it with
+`--data-root`.
+
+Example layout for a custom course named `demo101`:
+
+```text
+data/custom/demo101/
+  input/
+    slides/
+    textbooks/
+  test_set/
+    test_set.json
+    test_set_with_labels.json
+```
+
+Then run commands like:
+
+```bash
+python3 app.py extract --course demo101 --source slides --overwrite --data-root data/custom
+python3 app.py chunk --course demo101 --source slides --chunk-mode token-window --data-root data/custom
+python3 app.py index --course demo101 --source slides --data-root data/custom
+python3 app.py retrieve --course demo101 --source slides --top-k 10 --data-root data/custom
+python3 app.py generate --course demo101 --source slides --top-k 10 --data-root data/custom
+python3 app.py evaluate --course demo101 --source slides --top-k 10 --data-root data/custom
+python3 app.py ir-metrics --course demo101 --source slides --k-values 1 3 5 7 10 --data-root data/custom
+```
+
+Built-in course IDs such as `bi358`, `cos226`, and `in3240` keep using the
+default `data/inputs/<COURSE>/` layout.
+
 ## How To Use
 
 Inspect the available commands:
