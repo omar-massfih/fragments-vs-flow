@@ -1,0 +1,39 @@
+# pytest: run the local workspace test suite
+pytest==9.0.2
+
+# python-dotenv: load local .env provider settings in src/config.py
+python-dotenv==1.2.2
+
+# openai: Azure OpenAI client
+openai==2.30.0
+
+# langchain-openai: Azure OpenAI / OpenAI chat and embedding adapters
+langchain-openai==1.1.12
+
+# langchain-ibm: watsonx chat client for answer generation
+langchain-ibm==1.0.5
+
+# pdfplumber: extract ordered text from source PDFs
+pdfplumber==0.11.9
+
+# docling: old textbook PDF extraction backend
+docling==2.84.0
+
+# pypdf: exact old textbook page-count handling for Docling per-page extraction
+pypdf==6.9.2
+
+# tqdm: show page-level extraction progress bars
+tqdm==4.67.3
+
+# ragas: RAGAS evaluation metrics over generated answers and oracle context
+ragas==0.4.3
+
+# tiktoken: legacy-compatible token counting for textbook chunking
+tiktoken==0.12.0
+
+# langchain-text-splitters: old textbook markdown and recursive chunk splitting
+langchain-text-splitters==1.1.1
+
+# pymilvus[milvus_lite]: local Milvus backend for vector-store
+pymilvus[milvus_lite]==2.4.15
+setuptools==81.0.0
