@@ -1,0 +1,47 @@
+[
+  {
+    "question_id": "DQ-001",
+    "question": "What does the retrieval stage return for a question?",
+    "ground_truth": "The retrieval stage returns the most relevant chunks or passages for the question.",
+    "complexity": "Low",
+    "reasoning_type": "Fact_Lookup",
+    "slide_chunk_ids": [
+      "demo_week1_slides:0"
+    ],
+    "textbook_chunk_ids": [],
+    "slides_labels": {
+      "demo_week1_slides:0": 2
+    },
+    "textbooks_labels": {}
+  },
+  {
+    "question_id": "DQ-002",
+    "question": "Why might smaller chunks improve precision?",
+    "ground_truth": "Smaller chunks can improve precision because they contain more focused content, although they may reduce available context.",
+    "complexity": "Medium",
+    "reasoning_type": "Multi-hop",
+    "slide_chunk_ids": [
+      "demo_week2_slides:0"
+    ],
+    "textbook_chunk_ids": [],
+    "slides_labels": {
+      "demo_week2_slides:0": 2
+    },
+    "textbooks_labels": {}
+  },
+  {
+    "question_id": "DQ-003",
+    "question": "What is nDCG used for in retrieval evaluation?",
+    "ground_truth": "nDCG is used to measure retrieval quality while giving more credit to relevant results that appear near the top of the ranking.",
+    "complexity": "Medium",
+    "reasoning_type": "Fact_Lookup",
+    "slide_chunk_ids": [
+      "demo_week2_slides:0"
+    ],
+    "textbook_chunk_ids": [],
+    "slides_labels": {
+      "demo_week2_slides:0": 2
+    },
+    "textbooks_labels": {}
+  }
+]
